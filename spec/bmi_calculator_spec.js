@@ -13,5 +13,4 @@ beforeEach(function() {
     calculator.metric_bmi(person);
     expect(person.bmiValue).toEqual(26.01);
   });
-
 });
