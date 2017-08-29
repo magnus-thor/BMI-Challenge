@@ -11,6 +11,7 @@ BMICalculator.prototype.metric_bmi = function(obj) {
     obj.bmiValue = parseFloat(finalBmi.toFixed(2));
     setBMIMessage(obj);
   };
+};
 
   BMICalculator.prototype.imperial = function(obj) {
     var weight_st = obj.weight_st;
@@ -22,7 +23,8 @@ BMICalculator.prototype.metric_bmi = function(obj) {
       var inches = height_f * 12 + height_i;
       var finalBmi = lbs / (inches * inches);
       obj.bmiValue = parseFloat(finalBmi.toFixed(2));
-    }
+      setBMIMessage(obj);
+    };
   };
 
   function setBMIMessage (obj) {
@@ -39,5 +41,3 @@ BMICalculator.prototype.metric_bmi = function(obj) {
       obj.bmiMessage = "Obese"
     }
   }
-
-}
