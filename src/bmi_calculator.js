@@ -10,7 +10,20 @@ BMICalculator.prototype.metric_bmi = function(obj) {
     var finalBmi = weight / (height / 100 * height /100);
     obj.bmiValue = parseFloat(finalBmi.toFixed(2));
     setBMIMessage(obj);
-  }
+  };
+
+  BMICalculator.prototype.imperial = function(obj) {
+    var weight_st = obj.weight_st;
+    var weight_lb = obj.weight_lb;
+    var height_f = obj.height_f;
+    var height_i = obj.height_i;
+    if (weight_st > 0 && weight_lb > 0 && height_f > 0 && height_i > 0) {
+      var lbs = ((weight_st * 14) + weight_lb) * 703;
+      var inches = height_f * 12 + height_i;
+      var finalBmi = lbs / (inches * inches);
+      obj.bmiValue = parseFloat(finalBmi.toFixed(2));
+    }
+  };
 
   function setBMIMessage (obj) {
     if (obj.bmiValue < 18.5) {
@@ -26,4 +39,5 @@ BMICalculator.prototype.metric_bmi = function(obj) {
       obj.bmiMessage = "Obese"
     }
   }
-};
+
+}

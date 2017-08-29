@@ -1,4 +1,4 @@
-# index html
+<!-- # index html -->
 
 <!DOCTYPE html>
 <html>
@@ -7,25 +7,22 @@
   <title>BMI Calculator</title>
   <script src="src/person.js"></script>
   <script src="src/bmi_calculator.js"></script>
+  <script sec="src/bmi_calculator_imperial.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('#calculate').click(function () {
-        var w = parseFloat($('#weight').val());
-        var h = parseFloat($('#height').val());
-        var person = new Person({weight: w, height: h});
-        person.calculate_bmi();
-        $('#display_value').html('Your BMI is ' + person.bmiValue);
-        $('#display_message').html('and you are ' + person.bmiMessage);
-      });
-    });
-  </script>
+  <script src="src/bmi_ui.js"></script>
 </head>
 <body>
   <form>
     <input type="text" id="weight" placeholder="Weight">
     <input type="text" id="height" placeholder="Height">
-    <input type="button" id="calculate" value="Calculate">
+    <input type="button" id="calculate_metric" value="Calculate Metric">
+  </form>
+  <form>
+    <input type="text" id="weight_st" placeholder="Weight in stones">
+    <input type="text" id="weight_lb" placeholder="lbs">
+    <input type="text" id="height_f" placeholder="Feet">
+    <input type="text" id="height_i" placeholder="Inches">
+    <input type="button" id="calculate_imp" value="Calculate Imperial">
   </form>
   <div>
     <span id="display_value"></span>

@@ -12,4 +12,9 @@ function Person(attr) {
     calculator = new BMICalculator();
     calculator.metric_bmi(this);
   };
+
+  Person.prototype.calculate_bmi_imp = function() {
+    calculator_imp = new BMICalculator();
+    calculator_imp.imperial(this);
+  };
 }
