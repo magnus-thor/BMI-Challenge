@@ -1,6 +1,6 @@
 // spec/bmi_calculator.js
 
-describe("BMICalculator", funtion() {
+describe("BMICalculator", function() {
   var calculator;
   var person;
 
@@ -13,5 +13,5 @@ beforeEach(function() {
     calculator.metric_bmi(person);
     expect(person.bmiValue).toEqual(26.01);
   });
-  
+
 });
