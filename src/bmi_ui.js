@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  $('.imperial').hide();
+
   $('#calculate_metric').click(function () {
     var w = parseFloat($('#weight').val());
     var h = parseFloat($('#height').val());
@@ -19,4 +21,11 @@ $(document).ready(function () {
     $('#display_message_2').html('and you are ' + person_imp.bmiMessage);
   })
 
+  $('input[type="radio"]').click(function(){
+          var inputValue = $(this).attr("value");
+          var targetBox = $("." + inputValue);
+          $(".bmi").not(targetBox).hide();
+          $(targetBox).show();
+          $('.message').text('');
+      });
 });

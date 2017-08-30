@@ -1,4 +1,3 @@
-
 // spec/bmi_ui_spec.js
 
 describe('BMI_UI - index.html', function() {
